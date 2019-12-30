@@ -1,5 +1,56 @@
 public class MoveRules {
 
+    public static boolean canPawnMove(Board board, Square start, Square end) {
+        // TODO: If pawn is at start position it can move two squares up or down
+        Square[][] b = board.getBoard();
+        if (b[start.getX()][start.getY()].getPiece().isWhite()) {
+            // White pawn can move up
+            if (end.getX() == start.getX() && end.getY() == start.getY()+1) {
+                if (b[end.getX()][end.getY()].getPiece() == null) {
+                    return true;
+                }
+            }
+            //White pawn can take piece
+            if ((end.getX() == start.getX()+1 && end.getY() == start.getY()+1) || (end.getX() == start.getX()-1 && end.getY() == start.getY()+1)) {
+                if(b[end.getX()][end.getY()].getPiece() != null) {
+                    return true;
+                }
+            }
+
+        }else {
+            //Black pawn can move down
+            if (end.getX() == start.getX() && end.getY() == start.getY()-1) {
+                if (b[end.getX()][end.getY()].getPiece() == null) {
+                    return true;
+                }
+            }
+            //Black pawn can take piece
+            if ((end.getX() == start.getX()+1 && end.getY() == start.getY()-1) || (end.getX() == start.getX()-1 && end.getY() == start.getY()-1)) {
+                if(b[end.getX()][end.getY()].getPiece() != null) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static boolean canKnightMove(Board board, Square start, Square end) {
+        Square[][] b = board.getBoard();
+
+        //check if move is in correct L shape: If +1 in one direction -> +2 in other direction
+        if ((((end.getX() == start.getX() + 1) || (end.getX() == start.getX() - 1)) &&
+                ((end.getY() == start.getY() + 2) || (end.getY() == start.getY() - 2))) ||
+                (((end.getX() == start.getX() + 2) || (end.getX() == start.getX() - 2)) &&
+                        ((end.getY() == start.getY() + 1) || (end.getY() == start.getY() - 1)))) {
+
+            // check if end square isnt occupied by own piece
+            if (b[end.getX()][end.getY()].getPiece() == null || (b[start.getX()][start.getY()].getPiece().isWhite() != b[end.getX()][end.getY()].getPiece().isWhite())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static boolean canBishopMove(Board board, Square start, Square end) {
         Square[][] b = board.getBoard();
         //check if move is diagonal
@@ -84,6 +135,26 @@ public class MoveRules {
                     }
                 }
             }
+        }
+        return false;
+    }
+
+    public static boolean canKingMove(Board board, Square start, Square end) {
+        Square[][] b = board.getBoard();
+
+        int diffX = Math.abs(end.getX() - start.getX());
+        int diffY = Math.abs(end.getY() - start.getY());
+        if(diffX <= 1 && diffY <= 1) {
+            if (b[end.getX()][end.getY()].getPiece() == null || (b[start.getX()][start.getY()].getPiece().isWhite() != b[end.getX()][end.getY()].getPiece().isWhite())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean canQueenMove(Board board, Square start, Square end) {
+        if (MoveRules.canBishopMove(board, start, end) || MoveRules.canRookMove(board, start, end)) {
+            return true;
         }
         return false;
     }

@@ -5,9 +5,10 @@ public class Queen extends Piece {
 
     @Override
     public boolean canMove(Board board, Square start, Square end) {
-        if (MoveRules.canBishopMove(board, start, end) || MoveRules.canRookMove(board, start, end)) {
+        if (MoveRules.canQueenMove(board, start, end)) {
             return true;
         }
+        System.err.println("Illegal queen move");
         return false;
     }
 
