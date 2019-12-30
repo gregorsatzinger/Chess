@@ -1,7 +1,9 @@
 public class Board {
     private Square[][] box;
+    private boolean isWhitesTurn;
     public Board() {
         box = new Square[8][8];
+        isWhitesTurn = true;
         initSquare();
         loadStartPosition();
     }
@@ -11,9 +13,12 @@ public class Board {
     }
 
     public void movePiece(int x1, int y1, int x2, int y2) {
-        if (box[x1][y1].getPiece()!=null && box[x1][y1].getPiece().canMove(this, new Square(x1,y1), new Square(x2,y2))){
+        if (box[x1][y1].getPiece()!=null &&
+                box[x1][y1].getPiece().isWhite() == isWhitesTurn &&
+                box[x1][y1].getPiece().canMove(this, new Square(x1,y1), new Square(x2,y2))){
             box[x2][y2].setPiece(box[x1][y1].getPiece());
             box[x1][y1].setPiece(null);
+            isWhitesTurn = !isWhitesTurn;
         }
     }
 

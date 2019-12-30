@@ -9,7 +9,7 @@ public class King extends Piece {
         if (MoveRules.canKingMove(board, start, end)) {
             return true;
         }
-        System.err.println("Illegal knight move");
+        System.err.println("Illegal king move");
         return false;
     }
 

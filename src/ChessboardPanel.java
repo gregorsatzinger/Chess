@@ -1,9 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class ChessboardGfx extends JPanel {
-    private final int FIELD_SIZE = 100;
-    public ChessboardGfx() {
+public class ChessboardPanel extends JPanel {
+    public final int FIELD_SIZE = 80;
+    public ChessboardPanel() {
         super(new GridLayout(8,8));
         this.setPreferredSize(new Dimension(8*FIELD_SIZE,8*FIELD_SIZE));
     }
@@ -18,16 +18,8 @@ public class ChessboardGfx extends JPanel {
         for (int n = 0; n < 64; n++) {
             JLabel sq = new JLabel("",SwingConstants.CENTER);
             sq.setOpaque(true);
-            sq.setFont(new Font("Sans",Font.BOLD,FIELD_SIZE/2));
-            sq.setText(board[7-i][7-j].toString());
-
-            //set every piece to the correct color
-            if (board[7-i][7-j].getPiece() != null && board[7-i][7-j].getPiece().isWhite()) {
-                sq.setForeground(Color.WHITE);
-            }else {
-                sq.setForeground(Color.BLACK);
-            }
-
+            sq.setIcon(board[7-i][7-j].getPiece() != null ? board[7-i][7-j].getPiece().getImageIcon() : new ImageIcon());
+            this.add(sq);
 
             // Logic to color the board in right colors
             if ((n / 8 + n % 8) % 2 == 0) {
@@ -35,7 +27,7 @@ public class ChessboardGfx extends JPanel {
             }else {
                 sq.setBackground(new Color(185, 134, 99));
             }
-            this.add(sq);
+
             i++;
             if(i == 8){
                 j++;

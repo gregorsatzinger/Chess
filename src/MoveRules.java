@@ -1,7 +1,6 @@
 public class MoveRules {
 
     public static boolean canPawnMove(Board board, Square start, Square end) {
-        // TODO: If pawn is at start position it can move two squares up or down
         Square[][] b = board.getBoard();
         if (b[start.getX()][start.getY()].getPiece().isWhite()) {
             // White pawn can move up
@@ -10,13 +9,18 @@ public class MoveRules {
                     return true;
                 }
             }
-            //White pawn can take piece
+            // White pawn can take piece
             if ((end.getX() == start.getX()+1 && end.getY() == start.getY()+1) || (end.getX() == start.getX()-1 && end.getY() == start.getY()+1)) {
                 if(b[end.getX()][end.getY()].getPiece() != null) {
                     return true;
                 }
             }
-
+            // White pawn can move up from 2nd rank two squares at once
+            if (end.getX() == start.getX() && start.getY() == 1 && end.getY() == start.getY()+2) {
+                if (b[end.getX()][end.getY()].getPiece() == null) {
+                    return true;
+                }
+            }
         }else {
             //Black pawn can move down
             if (end.getX() == start.getX() && end.getY() == start.getY()-1) {
@@ -27,6 +31,12 @@ public class MoveRules {
             //Black pawn can take piece
             if ((end.getX() == start.getX()+1 && end.getY() == start.getY()-1) || (end.getX() == start.getX()-1 && end.getY() == start.getY()-1)) {
                 if(b[end.getX()][end.getY()].getPiece() != null) {
+                    return true;
+                }
+            }
+            // White pawn can move up from 2nd rank two squares at once
+            if (end.getX() == start.getX() && start.getY() == 6 && end.getY() == start.getY()-2) {
+                if (b[end.getX()][end.getY()].getPiece() == null) {
                     return true;
                 }
             }
