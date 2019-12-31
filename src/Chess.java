@@ -4,7 +4,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class Chess {
-    public Chess(){
+    private Chess(){
         ChessboardPanel cb = new ChessboardPanel();
         JLabel info = new JLabel("Click on the square to move a piece.");
 
@@ -33,7 +33,7 @@ public class Chess {
                 firstSquare = !firstSquare;
 
                 if (firstSquare){
-                    x1 = 7-e.getX()/cb.FIELD_SIZE;
+                    x1 = e.getX()/cb.FIELD_SIZE;
                     y1 = 7-e.getY()/cb.FIELD_SIZE;
                     if (board.getBoard()[x1][y1].getPiece() != null){
                         board.getBoard()[x1][y1].getPiece().setSelected(true);
@@ -43,7 +43,7 @@ public class Chess {
                     cb.revalidate();
 
                 } else{
-                    x2 = 7-e.getX()/cb.FIELD_SIZE;
+                    x2 = e.getX()/cb.FIELD_SIZE;
                     y2 = 7-e.getY()/cb.FIELD_SIZE;
                     if (board.getBoard()[x1][y1].getPiece() != null){
                         board.getBoard()[x1][y1].getPiece().setSelected(false);
