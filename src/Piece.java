@@ -6,11 +6,12 @@ import java.io.IOException;
 
 public abstract class Piece {
     private boolean isWhite;
-    private boolean isAlive;
+    private boolean isSelected;
     private ImageIcon icon;
 
-    public Piece(boolean isWhite) {
+    public Piece(boolean isWhite, boolean isSelected) {
         this.isWhite = isWhite;
+        this.isSelected = isSelected;
         BufferedImage bi = null;
         try {
             bi = ImageIO.read(new File( isWhite ? "res/w"+this.getClass().getSimpleName()+".png" : "res/b"+this.getClass().getSimpleName()+".png"));
@@ -25,16 +26,12 @@ public abstract class Piece {
     }
 
 
-    public void setWhite(boolean white) {
-        isWhite = white;
+    public boolean isSelected() {
+        return isSelected;
     }
 
-    public boolean isAlive() {
-        return isAlive;
-    }
-
-    public void setAlive(boolean alive) {
-        isAlive = alive;
+    public void setSelected(boolean selected) {
+        isSelected = selected;
     }
 
     public ImageIcon getImageIcon() {

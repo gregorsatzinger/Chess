@@ -1,6 +1,6 @@
 public class Bishop extends Piece {
-    public Bishop(boolean isWhite) {
-        super(isWhite);
+    public Bishop(boolean isWhite, boolean isSelected) {
+       super(isWhite, isSelected);
     }
 
     @Override

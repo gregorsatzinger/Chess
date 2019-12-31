@@ -1,6 +1,6 @@
 public class Knight extends Piece {
-    public Knight(boolean isWhite) {
-        super(isWhite);
+    public Knight(boolean isWhite, boolean isSelected) {
+        super(isWhite, isSelected);
     }
 
     @Override

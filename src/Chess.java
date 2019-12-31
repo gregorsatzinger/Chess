@@ -35,11 +35,19 @@ public class Chess {
                 if (firstSquare){
                     x1 = 7-e.getX()/cb.FIELD_SIZE;
                     y1 = 7-e.getY()/cb.FIELD_SIZE;
+                    if (board.getBoard()[x1][y1].getPiece() != null){
+                        board.getBoard()[x1][y1].getPiece().setSelected(true);
+                    }
+                    cb.render(board);
                     info.setText("Select destination");
+                    cb.revalidate();
 
                 } else{
                     x2 = 7-e.getX()/cb.FIELD_SIZE;
                     y2 = 7-e.getY()/cb.FIELD_SIZE;
+                    if (board.getBoard()[x1][y1].getPiece() != null){
+                        board.getBoard()[x1][y1].getPiece().setSelected(false);
+                    }
                     board.movePiece(x1, y1, x2, y2);
                     cb.render(board);
                     info.setText("Select piece");

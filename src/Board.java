@@ -33,41 +33,41 @@ public class Board {
         /**
          * Init White
          */
-        box[0][0].setPiece(new Rook(true));
-        box[1][0].setPiece(new Knight(true));
-        box[2][0].setPiece(new Bishop(true));
-        box[3][0].setPiece(new King(true));
-        box[4][0].setPiece(new Queen(true));
-        box[5][0].setPiece(new Bishop(true));
-        box[6][0].setPiece(new Knight(true));
-        box[7][0].setPiece(new Rook(true));
-        box[0][1].setPiece(new Pawn(true));
-        box[1][1].setPiece(new Pawn(true));
-        box[2][1].setPiece(new Pawn(true));
-        box[3][1].setPiece(new Pawn(true));
-        box[4][1].setPiece(new Pawn(true));
-        box[5][1].setPiece(new Pawn(true));
-        box[6][1].setPiece(new Pawn(true));
-        box[7][1].setPiece(new Pawn(true));
+        box[0][0].setPiece(new Rook(true, false));
+        box[1][0].setPiece(new Knight(true, false));
+        box[2][0].setPiece(new Bishop(true, false));
+        box[3][0].setPiece(new King(true, false));
+        box[4][0].setPiece(new Queen(true, false));
+        box[5][0].setPiece(new Bishop(true, false));
+        box[6][0].setPiece(new Knight(true, false));
+        box[7][0].setPiece(new Rook(true, false));
+        box[0][1].setPiece(new Pawn(true, false));
+        box[1][1].setPiece(new Pawn(true, false));
+        box[2][1].setPiece(new Pawn(true, false));
+        box[3][1].setPiece(new Pawn(true, false));
+        box[4][1].setPiece(new Pawn(true, false));
+        box[5][1].setPiece(new Pawn(true, false));
+        box[6][1].setPiece(new Pawn(true, false));
+        box[7][1].setPiece(new Pawn(true, false));
 
         /***
          * Init black
          */
-        box[0][7].setPiece(new Rook(false));
-        box[1][7].setPiece(new Knight(false));
-        box[2][7].setPiece(new Bishop(false));
-        box[3][7].setPiece(new King(false));
-        box[4][7].setPiece(new Queen(false));
-        box[5][7].setPiece(new Bishop(false));
-        box[6][7].setPiece(new Knight(false));
-        box[7][7].setPiece(new Rook(false));
-        box[0][6].setPiece(new Pawn(false));
-        box[1][6].setPiece(new Pawn(false));
-        box[2][6].setPiece(new Pawn(false));
-        box[3][6].setPiece(new Pawn(false));
-        box[4][6].setPiece(new Pawn(false));
-        box[5][6].setPiece(new Pawn(false));
-        box[6][6].setPiece(new Pawn(false));
-        box[7][6].setPiece(new Pawn(false));
+        box[0][7].setPiece(new Rook(false, false));
+        box[1][7].setPiece(new Knight(false, false));
+        box[2][7].setPiece(new Bishop(false, false));
+        box[3][7].setPiece(new King(false, false));
+        box[4][7].setPiece(new Queen(false, false));
+        box[5][7].setPiece(new Bishop(false, false));
+        box[6][7].setPiece(new Knight(false, false));
+        box[7][7].setPiece(new Rook(false, false));
+        box[0][6].setPiece(new Pawn(false, false));
+        box[1][6].setPiece(new Pawn(false, false));
+        box[2][6].setPiece(new Pawn(false, false));
+        box[3][6].setPiece(new Pawn(false, false));
+        box[4][6].setPiece(new Pawn(false, false));
+        box[5][6].setPiece(new Pawn(false, false));
+        box[6][6].setPiece(new Pawn(false, false));
+        box[7][6].setPiece(new Pawn(false, false));
     }
 }

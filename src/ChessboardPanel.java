@@ -27,6 +27,10 @@ public class ChessboardPanel extends JPanel {
             }else {
                 sq.setBackground(new Color(185, 134, 99));
             }
+            //Highlight if square is selected
+            if (board[7-i][7-j].getPiece() != null && board[7-i][7-j].getPiece().isSelected()){
+                sq.setBackground(new Color(120, 120, 120));
+            }
 
             i++;
             if(i == 8){

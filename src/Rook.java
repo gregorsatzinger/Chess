@@ -1,7 +1,7 @@
 public class Rook extends Piece {
 
-    public Rook(boolean isWhite) {
-        super(isWhite);
+    public Rook(boolean isWhite, boolean isSelected) {
+        super(isWhite, isSelected);
     }
 
     @Override

@@ -1,6 +1,6 @@
 public class Pawn extends Piece {
-    public Pawn(boolean isWhite) {
-        super(isWhite);
+    public Pawn(boolean isWhite, boolean isSelected) {
+        super(isWhite, isSelected);
     }
 
     @Override

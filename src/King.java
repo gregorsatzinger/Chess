@@ -1,7 +1,7 @@
 public class King extends Piece {
 
-    public King(boolean isWhite) {
-        super(isWhite);
+    public King(boolean isWhite, boolean isSelected) {
+        super(isWhite, isSelected);
     }
 
     @Override
