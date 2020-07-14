@@ -11,4 +11,4 @@ Board inspired by lichess.org
 Pieces from: https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Chess_Pieces_Sprite.svg/2000px-Chess_Pieces_Sprite.svg.png
 
 ## Attention :)
-Project might include some bad design decisions. Specially the way I'm handeling coordinates on the board is quite sketchy and should get changed to something more intuitively.
+Project might include some bad design decisions. Especially the way I'm handeling coordinates on the board is quite sketchy and should get changed to something more intuitively.
